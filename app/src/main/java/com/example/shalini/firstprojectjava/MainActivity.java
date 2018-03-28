@@ -1,6 +1,7 @@
 package com.example.shalini.firstprojectjava;
 
-import android.animation.Animator;
+//import android.animation.Animator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
@@ -12,15 +13,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
+//import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    FloatingActionButton fab, fab1, fab2, fab3;
-    LinearLayout fabLayout1, fabLayout2, fabLayout3;
-    View fabBGLayout;
-    boolean isFABOpen=false;
+    FloatingActionButton fab;//, fab1, fab2, fab3;
+    //LinearLayout fabLayout1, fabLayout2, fabLayout3;
+    //View fabBGLayout;
+    //boolean isFABOpen=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,32 +30,35 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        fabLayout1= findViewById(R.id.fabLayout1);
-        fabLayout2= findViewById(R.id.fabLayout2);
-        fabLayout3= findViewById(R.id.fabLayout3);
+        //fabLayout1= findViewById(R.id.fabLayout1);
+        //fabLayout2= findViewById(R.id.fabLayout2);
+        //fabLayout3= findViewById(R.id.fabLayout3);
         fab = findViewById(R.id.fab);
-        fab1 = findViewById(R.id.fab1);
-        fab2= findViewById(R.id.fab2);
-        fab3 = findViewById(R.id.fab3);
-        fabBGLayout=findViewById(R.id.fabBGLayout);
+        //fab1 = findViewById(R.id.fab1);
+        //fab2= findViewById(R.id.fab2);
+        //fab3 = findViewById(R.id.fab3);
+        //fabBGLayout=findViewById(R.id.fabBGLayout);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!isFABOpen){
-                    showFABMenu();
-                }else{
-                    closeFABMenu();
-                }
+                Intent intent =  new Intent(MainActivity.this, TabbedActivity.class);
+                startActivity(intent);
+
+                //if(!isFABOpen){
+                //    showFABMenu();
+                //}else{
+                //    closeFABMenu();
+                //}
             }
         });
 
-        fabBGLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                closeFABMenu();
-            }
-        });
+        //fabBGLayout.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
+        //        closeFABMenu();
+        //    }
+       // });
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -66,51 +70,51 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    private void showFABMenu(){
-        isFABOpen=true;
-        fabLayout1.setVisibility(View.VISIBLE);
-        fabLayout2.setVisibility(View.VISIBLE);
-        fabLayout3.setVisibility(View.VISIBLE);
-        fabBGLayout.setVisibility(View.VISIBLE);
+    //private void showFABMenu(){
+      //  isFABOpen=true;
+        //fabLayout1.setVisibility(View.VISIBLE);
+        //fabLayout2.setVisibility(View.VISIBLE);
+        //fabLayout3.setVisibility(View.VISIBLE);
+        //fabBGLayout.setVisibility(View.VISIBLE);
 
-        fab.animate().rotationBy(180);
-        fabLayout1.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
-        fabLayout2.animate().translationY(-getResources().getDimension(R.dimen.standard_105));
-        fabLayout3.animate().translationY(-getResources().getDimension(R.dimen.standard_155));
-    }
+        //fab.animate().rotationBy(180);
+        //fabLayout1.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
+        //fabLayout2.animate().translationY(-getResources().getDimension(R.dimen.standard_105));
+        //fabLayout3.animate().translationY(-getResources().getDimension(R.dimen.standard_155));
+    //}
 
-    private void closeFABMenu() {
-        isFABOpen = false;
-        fabBGLayout.setVisibility(View.GONE);
-        fab.animate().rotationBy(-180);
-        fabLayout1.animate().translationY(0);
-        fabLayout2.animate().translationY(0);
-        fabLayout3.animate().translationY(0).setListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
+    //private void closeFABMenu() {
+      //  isFABOpen = false;
+        //fabBGLayout.setVisibility(View.GONE);
+        //fab.animate().rotationBy(-180);
+        //fabLayout1.animate().translationY(0);
+        //fabLayout2.animate().translationY(0);
+        //fabLayout3.animate().translationY(0).setListener(new Animator.AnimatorListener() {
+          //  @Override
+            //public void onAnimationStart(Animator animator) {
 
-            }
+            //}
 
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                if(!isFABOpen){
-                    fabLayout1.setVisibility(View.GONE);
-                    fabLayout2.setVisibility(View.GONE);
-                    fabLayout3.setVisibility(View.GONE);
-                }
+            //@Override
+            //public void onAnimationEnd(Animator animator) {
+            //    if(!isFABOpen){
+            //        fabLayout1.setVisibility(View.GONE);
+            //        fabLayout2.setVisibility(View.GONE);
+            //        fabLayout3.setVisibility(View.GONE);
+            //    }
 
-            }
-            @Override
-            public void onAnimationCancel(Animator animator) {
+            //}
+           // @Override
+            //public void onAnimationCancel(Animator animator) {
 
-            }
+            //}
 
-            @Override
-            public void onAnimationRepeat(Animator animator) {
+            //@Override
+            //public void onAnimationRepeat(Animator animator) {
 
-            }
-        });
-    }
+            //}
+        //});
+    //}
 
 
 
