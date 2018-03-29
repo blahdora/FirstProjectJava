@@ -22,7 +22,7 @@
 
     <include layout="@layout/content_main" />
 
-    <View
+    <!--<View
         android:id="@+id/fabBGLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -106,11 +106,12 @@
             android:tint="@android:color/white"
             app:fabSize="mini"/>
     </LinearLayout>
-
+    -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
         android:gravity="center_vertical"
         android:clipToPadding="false"
         android:padding="@dimen/standard_12"
